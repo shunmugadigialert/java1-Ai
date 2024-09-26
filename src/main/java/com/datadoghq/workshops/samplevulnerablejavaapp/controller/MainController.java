@@ -33,9 +33,9 @@ public class MainController {
 
   @RequestMapping(method=RequestMethod.POST, value="/test-domain", consumes="application/json")
   public ResponseEntity<String> testDomain(@RequestBody DomainTestRequest request) {
-    log.info("Testing domain " + request.domainName);
+    log.info("Testing domain " + request.abc);
     try {
-      String result = domainTestService.testDomain(request.domainName);
+      String result = domainTestService.testDomain(request.abc);
       return new ResponseEntity<>(result, HttpStatus.OK);
     } catch(InvalidDomainException e) {
       return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
