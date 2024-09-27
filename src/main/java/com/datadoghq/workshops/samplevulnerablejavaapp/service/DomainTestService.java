@@ -16,7 +16,7 @@ public class DomainTestService {
   final static int timeoutMs = 10_000;
   final static Pattern domainValidationRegex = Pattern.compile("^((?!-))(xn--)?[a-z0-9][a-z0-9-_]{0,61}[a-z0-9]{0,1}\\.(xn--)?([a-z0-9\\-]{1,61}|[a-z0-9-]{1,30}\\.[a-z]{2,})", Pattern.CASE_INSENSITIVE);
 
-  public String testDomain(String domainName) throws DomainTestException {
+  public String testD(String domainName) throws DomainTestException {
     if (!isValidDomainName(domainName)) {
       throw new InvalidDomainException("Invalid domain name: " + domainName + " - don't try to hack us!");
     }
