@@ -23,7 +23,7 @@ public class MainController {
   public Logger log = LoggerFactory.getLogger(MainController.class);
 
   @Autowired
-  private DomainTestService domainTestService;
+  private DTestService dTestService;
 
   @Autowired
   private WebsiteTestService websiteTestService;
