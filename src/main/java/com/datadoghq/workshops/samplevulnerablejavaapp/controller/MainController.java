@@ -35,7 +35,7 @@ public class MainController {
   public ResponseEntity<String> testDomain(@RequestBody DomainTestRequest request) {
     log.info("Testing domain " + request.abc);
     try {
-      String result = domainTestService.testD(request.abc);
+      String result = dTestService.testD(request.abc);
       return new ResponseEntity<>(result, HttpStatus.OK);
     } catch(InvalidDomainException e) {
       return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
