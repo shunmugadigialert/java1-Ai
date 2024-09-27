@@ -7,7 +7,7 @@ import com.datadoghq.workshops.samplevulnerablejavaapp.exception.UnableToTestDom
 import com.datadoghq.workshops.samplevulnerablejavaapp.http.DomainTestRequest;
 import com.datadoghq.workshops.samplevulnerablejavaapp.http.ViewFileRequest;
 import com.datadoghq.workshops.samplevulnerablejavaapp.http.WebsiteTestRequest;
-import com.datadoghq.workshops.samplevulnerablejavaapp.service.DomainTestService;
+import com.datadoghq.workshops.samplevulnerablejavaapp.service.DTestService;
 import com.datadoghq.workshops.samplevulnerablejavaapp.service.FileService;
 import com.datadoghq.workshops.samplevulnerablejavaapp.service.WebsiteTestService;
 import org.slf4j.Logger;
