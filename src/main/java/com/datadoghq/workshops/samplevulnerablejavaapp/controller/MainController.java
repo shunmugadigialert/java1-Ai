@@ -11,6 +11,7 @@ import com.datadoghq.workshops.samplevulnerablejavaapp.service.DTestService;
 import com.datadoghq.workshops.samplevulnerablejavaapp.service.FileService;
 import com.datadoghq.workshops.samplevulnerablejavaapp.service.WebsiteTestService;
 import org.slf4j.Logger;
+import org.apache.commons.text.StringEscapeUtils;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,7 +51,8 @@ public class MainController {
   public ResponseEntity<String> testWebsite(@RequestBody WebsiteTestRequest request) {
     log.info("Testing website " + request.url);
     String result = websiteTestService.testWebsite(request);
-    return new ResponseEntity<>(result, HttpStatus.OK);
+    String safeResult = org.apache.commons.text.StringEscapeUtils.escapeHtml4(result);
+    return new ResponseEntity<>(safeResult, HttpStatus.OK);
   }
 
   @RequestMapping(method=RequestMethod.POST, value="/view-file", consumes="application/json")
